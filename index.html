@@ -11,32 +11,32 @@
 <body>
     <div class="game-container">
         <!-- Header -->
-        <div class="header">
-            <h1>Rock Paper Scissors Lizard Spock</h1>
+        <div class="header" data-test="header">
+            <h1 data-test="title">Rock Paper Scissors Lizard Spock</h1>
         </div>
         <!-- Player Container -->
-        <div class="player-container" id="player">
-            <h2>You - <span id="playerScore"></span><span class="choice" id="playerChoice"></span></h2>
-            <i class="far fa-hand-rock" title="Rock" id="playerRock" onclick="select('rock')"></i>
-            <i class="far fa-hand-paper" title="Paper" id="playerPaper" onclick="select('paper')"></i>
-            <i class="far fa-hand-scissors" title="Scissors" id="playerScissors" onclick="select('scissors')"></i>
-            <i class="far fa-hand-lizard" title="Lizard" id="playerLizard" onclick="select('lizard')"></i>
-            <i class="far fa-hand-spock" title="Spock" id="playerSpock" onclick="select('spock')"></i>
+        <div class="player-container" id="player" data-test="player-container">
+            <h2 data-test="player-score-header">You - <span id="playerScore" data-test="playerScore"></span><span class="choice" id="playerChoice" data-test="playerChoice"></span></h2>
+            <i class="far fa-hand-rock" title="Rock" id="playerRock" onclick="select('rock')" data-test="playerRock" testID="playerRock"></i>
+            <i class="far fa-hand-paper" title="Paper" id="playerPaper" onclick="select('paper')" data-test="playerPaper" testID="playerPaper"></i>
+            <i class="far fa-hand-scissors" title="Scissors" id="playerScissors" onclick="select('scissors')" data-test="playerScissors" testID="playerScissors"></i>
+            <i class="far fa-hand-lizard" title="Lizard" id="playerLizard" onclick="select('lizard')" data-test="playerLizard" testID="playerLizard"></i>
+            <i class="far fa-hand-spock" title="Spock" id="playerSpock" onclick="select('spock')" data-test="playerSpock" testID="playerSpock"></i>
         </div>
         <!-- Computer Container -->
-        <div class="player-container" id="computer">
-            <h2>Computer - <span id="computerScore"></span><span class="choice" id="computerChoice"></span></h2>
-            <i class="far fa-hand-rock" title="Rock" id="computerRock"></i>
-            <i class="far fa-hand-paper" title="Paper" id="computerPaper"></i>
-            <i class="far fa-hand-scissors" title="Scissors" id="computerScissors"></i>
-            <i class="far fa-hand-lizard" title="Lizard" id="computerLizard"></i>
-            <i class="far fa-hand-spock" title="Spock" id="computerSpock"></i>
+        <div class="player-container" id="computer" data-test="computer-container">
+            <h2 data-test="computer-score-header">Computer - <span id="computerScore" data-test="computerScore"></span><span class="choice" id="computerChoice" data-test="computerChoice"></span></h2>
+            <i class="far fa-hand-rock" title="Rock" id="computerRock" data-test="computerRock" testID="computerRock"></i>
+            <i class="far fa-hand-paper" title="Paper" id="computerPaper" data-test="computerPaper" testID="computerPaper"></i>
+            <i class="far fa-hand-scissors" title="Scissors" id="computerScissors" data-test="computerScissors" testID="computerScissors"></i>
+            <i class="far fa-hand-lizard" title="Lizard" id="computerLizard" data-test="computerLizard" testID="computerLizard"></i>
+            <i class="far fa-hand-spock" title="Spock" id="computerSpock" data-test="computerSpock" testID="computerSpock"></i>
         </div>
         <!-- Reset Icon -->
-        <i class="fas fa-sync-alt reset-icon" title="Reset" onclick="resetAll()"></i>
+        <i class="fas fa-sync-alt reset-icon" title="Reset" onclick="resetAll()" data-test="resetIcon" testID="resetIcon"></i>
         <!-- Results Text -->
-        <div class="result-container">
-            <h3 class="result-text" id="resultText"></h3>
+        <div class="result-container" data-test="result-container">
+            <h3 class="result-text" id="resultText" data-test="resultText"></h3>
         </div>
     </div>
     <!-- Script -->

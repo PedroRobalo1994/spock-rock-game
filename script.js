@@ -32,6 +32,13 @@ let playerScoreNumber = 0;
 let computerScoreNumber = 0;
 let computerChoice = '';
 
+// Define choice strings
+const ROCK = 'rock';
+const PAPER = 'paper';
+const SCISSORS = 'scissors';
+const LIZARD = 'lizard';
+const SPOCK = 'spock';
+
 // Reset all 'selected' icons, remove confetti
 function resetSelected() {
   allGameIcons.forEach((icon) => {
@@ -58,38 +65,38 @@ window.resetAll = resetAll;
 function computerRandomChoice() {
   const computerChoiceNumber = Math.random();
   if (computerChoiceNumber < 0.2) {
-    computerChoice = 'rock';
+    computerChoice = ROCK;
   } else if (computerChoiceNumber <= 0.4) {
-    computerChoice = 'paper';
+    computerChoice = PAPER;
   } else if (computerChoiceNumber <= 0.6) {
-    computerChoice = 'scissors';
+    computerChoice = SCISSORS;
   } else if (computerChoiceNumber <= 0.8) {
-    computerChoice = 'lizard';
+    computerChoice = LIZARD;
   } else {
-    computerChoice = 'spock';
+    computerChoice = SPOCK;
   }
 }
 
 // Add 'selected' styling & computerChoice
 function displayComputerChoice() {
   switch (computerChoice) {
-    case 'rock':
+    case ROCK:
       computerRock.classList.add('selected');
       computerChoiceEl.textContent = ' --- Rock';
       break;
-    case 'paper':
+    case PAPER:
       computerPaper.classList.add('selected');
       computerChoiceEl.textContent = ' --- Paper';
       break;
-    case 'scissors':
+    case SCISSORS:
       computerScissors.classList.add('selected');
       computerChoiceEl.textContent = ' --- Scissors';
       break;
-    case 'lizard':
+    case LIZARD:
       computerLizard.classList.add('selected');
       computerChoiceEl.textContent = ' --- Lizard';
       break;
-    case 'spock':
+    case SPOCK:
       computerSpock.classList.add('selected');
       computerChoiceEl.textContent = ' --- Spock';
       break;
@@ -104,7 +111,7 @@ function updateScore(playerChoice) {
     resultText.textContent = "It's a tie.";
   } else {
     const choice = choices[playerChoice];
-    if (choice.defeats.indexOf(computerChoice) > -1) {
+    if (choice.defeats.includes(computerChoice)) {
       startConfetti();
       resultText.textContent = 'You Won!';
       playerScoreNumber++;
@@ -128,25 +135,25 @@ function checkResult(playerChoice) {
 // Passing player selection value and styling icons
 function select(playerChoice) {
   checkResult(playerChoice);
-  // Add 'selected' styling & playerChoice
+
   switch (playerChoice) {
-    case 'rock':
+    case ROCK:
       playerRock.classList.add('selected');
       playerChoiceEl.textContent = ' --- Rock';
       break;
-    case 'paper':
+    case PAPER:
       playerPaper.classList.add('selected');
       playerChoiceEl.textContent = ' --- Paper';
       break;
-    case 'scissors':
+    case SCISSORS:
       playerScissors.classList.add('selected');
       playerChoiceEl.textContent = ' --- Scissors';
       break;
-    case 'lizard':
+    case LIZARD:
       playerLizard.classList.add('selected');
       playerChoiceEl.textContent = ' --- Lizard';
       break;
-    case 'spock':
+    case SPOCK:
       playerSpock.classList.add('selected');
       playerChoiceEl.textContent = ' --- Spock';
       break;
